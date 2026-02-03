@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>島根県立大学 国際関係学部 入試対策ポータル</title>
+    <title>島根県立大学 国際関係学部 小論文対策ポータル | 完全攻略マニュアル</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;800&display=swap"
         rel="stylesheet">
     <script>
         tailwind.config = {
@@ -16,15 +17,17 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Noto Sans JP"', 'sans-serif'],
+                        display: ['Outfit', '"Noto Sans JP"', 'sans-serif'],
                     },
                     colors: {
                         brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9',
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#38bdf8',
                             600: '#0284c7',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            gold: '#fbbf24',
                         }
                     }
                 }
@@ -34,178 +37,604 @@
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        .hero-pattern {
-            background-color: #0c4a6e;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230f172a' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-mesh {
+            background-color: #0f172a;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(203, 91%, 60%, 0.15) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(203, 91%, 40%, 0.1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(203, 91%, 60%, 0.15) 0, transparent 50%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
         }
     </style>
 </head>
 
-<body class="bg-gray-50 text-slate-800 antialiased">
+<body class="bg-[#0b1120] text-slate-300 antialiased">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-brand-800 font-bold text-lg tracking-tight">島根県立大学 国際関係学部</span>
-                    <span class="ml-3 text-slate-500 text-sm hidden sm:block">| 入試対策ポータル</span>
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center font-display text-white font-bold">
+                    SP</div>
+                <div>
+                    <span class="text-white font-bold text-lg tracking-tight block leading-tight">島根県立大学</span>
+                    <span class="text-brand-500 text-[10px] font-bold tracking-[0.2em] uppercase">International
+                        Relations</span>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="text-slate-600 hover:text-brand-600 font-medium text-sm">概要</a>
-                    <a href="#"
-                        class="bg-brand-600 text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-brand-700 transition">お問い合わせ</a>
-                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#manual" class="text-slate-400 hover:text-white transition text-sm font-medium">マニュアル</a>
+                <a href="#archive" class="text-slate-400 hover:text-white transition text-sm font-medium">過去問</a>
+                <a href="#mock" class="text-slate-400 hover:text-white transition text-sm font-medium">予想問題</a>
+                <a href="guide.html"
+                    class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition shadow-lg shadow-brand-600/20">
+                    対策ガイド
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-pattern text-white py-24 px-4 sm:px-6 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-900/90 to-brand-800/80"></div>
-        <div class="max-w-5xl mx-auto relative z-10 text-center">
-            <span
-                class="inline-block py-1 px-3 rounded-full bg-brand-500/20 border border-brand-400/30 text-brand-100 text-xs font-bold tracking-wider mb-6">令和7年度(2025)
-                一般選抜対策</span>
-            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
-                「世界」を読み解く<br class="hidden md:block">論理を磨け。
-            </h1>
-            <p class="text-lg md:text-xl text-brand-100 max-w-2xl mx-auto mb-10 leading-relaxed">
-                過去問から高坂正堯の理論を応用した予想問題まで。<br>
-                合格に必要な「思考の型」を身につけるための完全演習プラットフォーム。
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#exams"
-                    class="bg-white text-brand-900 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition transform">演習問題を見る</a>
-                <a href="guide.html"
-                    class="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition">対策のポイント</a>
+    <header class="hero-mesh min-h-screen flex items-center pt-24 pb-20 px-6 relative overflow-hidden">
+        <!-- Floating Elements -->
+        <div class="absolute top-1/4 left-1/10 w-64 h-64 bg-brand-500/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-brand-600/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="flex flex-col items-center text-center">
+                <div
+                    class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8 animate-fade-in">
+                    <span class="flex h-2 w-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    <span class="text-brand-500 text-[10px] font-black tracking-widest uppercase">2026 Edition
+                        Updated</span>
+                </div>
+
+                <h1 class="text-5xl md:text-8xl font-display font-black text-white mb-8 leading-tight animate-fade-in"
+                    style="animation-delay: 0.1s">
+                    <span class="text-gradient">「世界」を射抜く</span><br>
+                    <span class="text-brand-600">論理の力。</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed animate-fade-in"
+                    style="animation-delay: 0.2s">
+                    4年間の過去問分析に基づき、島根県立大学国際関係学部への合格を確かなものにする。
+                    改訂版「完全攻略マニュアル」と実戦演習アーカイブ、ここに集結。
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-5 animate-fade-in" style="animation-delay: 0.3s">
+                    <a href="#manual"
+                        class="bg-white text-brand-900 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-slate-100 transition shadow-xl shadow-white/5 flex items-center group">
+                        攻略マニュアルを読む
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 ml-2 group-hover:translate-x-1 transition" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#archive"
+                        class="bg-transparent border border-white/10 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/5 transition">
+                        過去問アーカイブ
+                    </a>
+                </div>
             </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" id="exams">
+    <!-- Strategy Manual Section -->
+    <section id="manual" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div
+                class="bg-gradient-to-br from-brand-600 to-brand-800 rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-2xl shadow-brand-600/20">
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="0" r="100" stroke="white" stroke-width="0.5" />
+                        <circle cx="100" cy="0" r="80" stroke="white" stroke-width="0.5" />
+                        <circle cx="100" cy="0" r="60" stroke="white" stroke-width="0.5" />
+                    </svg>
+                </div>
 
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">実戦演習アーカイブ</h2>
-            <p class="text-slate-600">本番形式の問題用紙と、詳細な解説・解答例を完備。</p>
+                <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10 mb-20">
+                    <div class="lg:w-3/5 text-center lg:text-left">
+                        <div
+                            class="inline-block bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-white text-xs font-bold mb-6 tracking-widest uppercase">
+                            Special Resource</div>
+                        <h2 class="text-3xl md:text-5xl font-display font-black text-white mb-6 leading-tight">
+                            改訂版：島根県立大学<br>小論文対策 完全攻略マニュアル
+                        </h2>
+                        <p class="text-brand-100/80 text-lg mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                            過去問4年分の蓄積と、最新の分析事項を反映。採点者の視点、合格答案の構成法、そして頻出テーマの深掘りまでを網羅した、受験生必携の指針。
+                        </p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                            <a href="改訂版_島根県立大学 国際関係学部 小論文対策：完全攻略マニュアル.pdf" target="_blank"
+                                class="bg-white text-brand-900 px-8 py-4 rounded-xl font-bold hover:scale-105 transition shadow-xl">
+                                PDFをフルで読む
+                            </a>
+                            <a href="guide.html"
+                                class="bg-brand-900/40 border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-900/60 transition">
+                                要点ガイドを見る
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/5 flex justify-center">
+                        <div class="relative group">
+                            <div
+                                class="absolute -inset-4 bg-brand-gold/30 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition duration-500">
+                            </div>
+                            <div
+                                class="relative glass rounded-[2rem] p-8 w-64 md:w-80 shadow-2xl transform rotate-3 group-hover:rotate-0 transition duration-500 border-white/10">
+                                <div class="w-12 h-1.5 bg-brand-gold rounded-full mb-6"></div>
+                                <div class="space-y-4">
+                                    <div class="h-4 bg-white/20 rounded w-3/4"></div>
+                                    <div class="h-4 bg-white/10 rounded w-full"></div>
+                                    <div class="h-4 bg-white/10 rounded w-full"></div>
+                                    <div class="h-4 bg-white/10 rounded w-2/3"></div>
+                                    <div class="pt-6 space-y-3">
+                                        <div class="h-2 bg-brand-500/30 rounded w-full"></div>
+                                        <div class="h-2 bg-brand-500/30 rounded w-5/6"></div>
+                                        <div class="h-2 bg-brand-500/30 rounded w-full"></div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-between">
+                                    <span
+                                        class="text-white/40 text-[10px] uppercase font-bold tracking-tighter">Verified
+                                        Content</span>
+                                    <span class="text-brand-gold font-display font-black text-xl italic">MUST
+                                        READ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Insights Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                    <div class="glass p-8 rounded-3xl border-white/10">
+                        <div class="text-3xl mb-4">⚖️</div>
+                        <h4 class="text-white font-bold text-lg mb-3">多層的な視点</h4>
+                        <p class="text-brand-100/60 text-sm leading-relaxed">
+                            国家を一枚岩と見なさず、政府、軍、市民社会など異なる主体の利害対立として分析する力。
+                        </p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl border-white/10">
+                        <div class="text-3xl mb-4">🕰️</div>
+                        <h4 class="text-white font-bold text-lg mb-3">歴史との接続</h4>
+                        <p class="text-brand-100/60 text-sm leading-relaxed">
+                            現代の事象を冷戦やウェストファリア体制など、歴史的文脈上に正しく位置づける視点。
+                        </p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl border-white/10">
+                        <div class="text-3xl mb-4">🚫</div>
+                        <h4 class="text-white font-bold text-lg mb-3">二元論の排斥</h4>
+                        <p class="text-brand-100/60 text-sm leading-relaxed">
+                            「善か悪か」の単純な図式を捨て、国際政治における複雑な「利益の調整」を理解する姿勢。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Analysis Badge Section -->
+                <div class="mt-12 pt-12 border-t border-white/10 relative z-10">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/3">
+                            <h4 class="text-white font-bold text-xl mb-2 italic">Analysis R4-R7</h4>
+                            <p class="text-brand-100/40 text-xs">直近4年間の出題傾向から導かれた結論</p>
+                        </div>
+                        <div class="md:w-2/3 flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-brand-500/10 border border-brand-500/20 rounded-full text-brand-500 text-[10px] font-bold">物理的境界から機能的境界へ</span>
+                            <span
+                                class="px-4 py-2 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-brand-gold text-[10px] font-bold">リアリズムとリベラリズムの止揚</span>
+                            <span
+                                class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white/60 text-[10px] font-bold">経済安全保障の重要性</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Archive Grid -->
+    <main class="max-w-7xl mx-auto px-6 py-20">
+
+        <!-- Past Exams -->
+        <div id="archive" class="mb-32">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-white text-3xl font-display font-black mb-2 uppercase tracking-wide">Past Exam
+                        Archive</h2>
+                    <p class="text-slate-500 font-medium">直近4年間の過去問と詳細解説</p>
+                </div>
+                <div class="h-px bg-white/10 flex-grow mx-8 hidden md:block mb-4"></div>
+                <div class="flex space-x-2">
+                    <span
+                        class="bg-red-500/10 text-red-500 text-[10px] font-bold px-3 py-1 rounded-full border border-red-500/20">OFFICIAL</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- R7 -->
+                <article class="glass rounded-3xl p-8 card-hover border-white/5 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-red-500/5 -mr-12 -mt-12 rounded-full blur-2xl group-hover:bg-red-500/10 transition">
+                    </div>
+                    <div class="mb-6 flex justify-between items-start">
+                        <span class="text-white/60 text-xs font-bold font-display">2025</span>
+                        <span class="bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded">R7</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 leading-tight">令和7年度 一般選抜</h3>
+                    <p class="text-slate-500 text-xs mb-8">最新の出題傾向。サイバー空間と主権の衝突。</p>
+                    <a href="exam_r7.html"
+                        class="block text-center py-3 bg-white/5 hover:bg-red-500 hover:text-white text-slate-400 font-bold rounded-xl transition border border-white/5 hover:border-red-500 shadow-sm">
+                        詳細を見る
+                    </a>
+                </article>
+
+                <!-- R6 -->
+                <article class="glass rounded-3xl p-8 card-hover border-white/5 group">
+                    <div class="mb-6 flex justify-between items-start">
+                        <span class="text-white/60 text-xs font-bold font-display">2024</span>
+                        <span class="bg-white/10 text-white text-[10px] font-black px-2 py-1 rounded">R6</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 leading-tight">令和6年度 一般選抜</h3>
+                    <p class="text-slate-500 text-xs mb-8">経済安全保障と相互依存の武器化。</p>
+                    <a href="exam_r6.html"
+                        class="block text-center py-3 bg-white/5 hover:bg-white/20 text-slate-400 hover:text-white font-bold rounded-xl transition border border-white/5">
+                        詳細を見る
+                    </a>
+                </article>
+
+                <!-- R5 -->
+                <article class="glass rounded-3xl p-8 card-hover border-white/5 group">
+                    <div class="mb-6 flex justify-between items-start">
+                        <span class="text-white/60 text-xs font-bold font-display">2023</span>
+                        <span class="bg-white/10 text-white text-[10px] font-black px-2 py-1 rounded">R5</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 leading-tight">令和5年度 一般選抜</h3>
+                    <p class="text-slate-500 text-xs mb-8">国際秩序の多極化とリーダーの不在。</p>
+                    <a href="exam_r5.html"
+                        class="block text-center py-3 bg-white/5 hover:bg-white/20 text-slate-400 hover:text-white font-bold rounded-xl transition border border-white/5">
+                        詳細を見る
+                    </a>
+                </article>
+
+                <!-- R4 -->
+                <article class="glass rounded-3xl p-8 card-hover border-white/5 group">
+                    <div class="mb-6 flex justify-between items-start">
+                        <span class="text-white/60 text-xs font-bold font-display">2022</span>
+                        <span class="bg-white/10 text-white text-[10px] font-black px-2 py-1 rounded">R4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 leading-tight">令和4年度 一般選抜</h3>
+                    <p class="text-slate-500 text-xs mb-8">伝統的な平和構築と国際連盟の理念。</p>
+                    <a href="exam_r4.html"
+                        class="block text-center py-3 bg-white/5 hover:bg-white/20 text-slate-400 hover:text-white font-bold rounded-xl transition border border-white/5">
+                        詳細を見る
+                    </a>
+                </article>
+            </div>
         </div>
 
-        <!-- Exam Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Card: Past Exam -->
-            <article
-                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition group">
-                <div class="h-2 bg-red-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-red-50 text-red-600 text-xs font-bold px-2 py-1 rounded">過去問</span>
-                        <span class="text-slate-400 text-xs">令和7年度</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition">令和7年度 一般選抜
-                    </h3>
-                    <p class="text-slate-500 text-sm mb-6 line-clamp-2">実際の入試問題です。傾向分析の出発点として必ず取り組みましょう。</p>
-                    <a href="exam_r7.html"
-                        class="block w-full text-center bg-slate-50 hover:bg-red-50 text-slate-700 hover:text-red-700 font-bold py-3 rounded-lg border border-slate-200 hover:border-red-200 transition">問題に挑戦する</a>
+        <!-- Mock Exams -->
+        <div id="mock">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-white text-3xl font-display font-black mb-2 uppercase tracking-wide">Prediction
+                        Exams</h2>
+                    <p class="text-slate-500 font-medium">難易度別・テーマ別の実戦演習問題</p>
                 </div>
-            </article>
-
-            <!-- Card: Mock 1 -->
-            <article
-                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition group">
-                <div class="h-2 bg-brand-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-50 text-brand-600 text-xs font-bold px-2 py-1 rounded">予想問題 1</span>
-                        <span class="text-slate-400 text-xs">標準レベル</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">地政学的境界の再定義
-                    </h3>
-                    <p class="text-slate-500 text-sm mb-6 line-clamp-2">伝統的な国境線と、サイバー空間等の新しい境界線の変容について問う問題。</p>
-                    <a href="exam_mock1.html"
-                        class="block w-full text-center bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 font-bold py-3 rounded-lg border border-slate-200 hover:border-brand-200 transition">問題に挑戦する</a>
+                <div class="h-px bg-white/10 flex-grow mx-8 hidden md:block mb-4"></div>
+                <div class="flex space-x-2">
+                    <span
+                        class="bg-brand-500/10 text-brand-500 text-[10px] font-bold px-3 py-1 rounded-full border border-brand-500/20">8
+                        THEMES</span>
                 </div>
-            </article>
+            </div>
 
-            <!-- Card: Mock 2 -->
-            <article
-                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition group">
-                <div class="h-2 bg-brand-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-50 text-brand-600 text-xs font-bold px-2 py-1 rounded">予想問題 2</span>
-                        <span class="text-slate-400 text-xs">応用レベル</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">経済安全保障のジレンマ
+            <!-- Introductory Level -->
+            <div class="mb-16">
+                <div class="flex items-center space-x-4 mb-8">
+                    <h3 class="text-brand-500 font-display font-bold text-lg uppercase tracking-widest">01. Introductory
                     </h3>
-                    <p class="text-slate-500 text-sm mb-6 line-clamp-2">自由貿易の原則と、国家安全保障のための規制強化の対立軸を論じる。</p>
-                    <a href="exam_mock2.html"
-                        class="block w-full text-center bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 font-bold py-3 rounded-lg border border-slate-200 hover:border-brand-200 transition">問題に挑戦する</a>
+                    <div class="h-px bg-brand-500/20 flex-grow"></div>
+                    <span class="text-slate-600 text-[10px] font-bold">はじめて取り組む方へ</span>
                 </div>
-            </article>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Mock 6 -->
+                    <article class="glass-dark rounded-[2.5rem] overflow-hidden border-white/5 card-hover group">
+                        <div class="h-3 bg-green-500"></div>
+                        <div class="p-8">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-green-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    06</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Basic Justice</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-green-500 transition">
+                                多様な「正義」と共生</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-8">
+                                価値観の衝突と対話の可能性を、身近な例から考える入門編。
+                            </p>
+                            <a href="exam_mock6.html"
+                                class="inline-flex items-center text-white text-sm font-bold group/btn">
+                                挑戦する
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
 
-            <!-- Card: Mock 3 -->
-            <article
-                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition group">
-                <div class="h-2 bg-brand-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-50 text-brand-600 text-xs font-bold px-2 py-1 rounded">予想問題 3</span>
-                        <span class="text-slate-400 text-xs">哲学・思想</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">『正義』の多義性と共生
-                    </h3>
-                    <p class="text-slate-500 text-sm mb-6 line-clamp-2">異なる正義間の対立をどう調停するか。抽象度の高い思考力が求められます。</p>
-                    <a href="exam_mock3.html"
-                        class="block w-full text-center bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 font-bold py-3 rounded-lg border border-slate-200 hover:border-brand-200 transition">問題に挑戦する</a>
+                    <!-- Mock 7 -->
+                    <article class="glass-dark rounded-[2.5rem] overflow-hidden border-white/5 card-hover group">
+                        <div class="h-3 bg-green-500"></div>
+                        <div class="p-8">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-green-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    07</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Digital Identity</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-green-500 transition">
+                                デジタル空間の境界線</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-8">
+                                SNS時代の自己認識と、現実社会とのバランスを問う。
+                            </p>
+                            <a href="exam_mock7.html"
+                                class="inline-flex items-center text-white text-sm font-bold group/btn">
+                                挑戦する
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Mock 8 -->
+                    <article class="glass-dark rounded-[2.5rem] overflow-hidden border-white/5 card-hover group">
+                        <div class="h-3 bg-green-500"></div>
+                        <div class="p-8">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-green-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    08</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Global Environment</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-green-500 transition">
+                                環境問題と国際的正義</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-8">
+                                南北問題と気候変動対策を巡る、責任の所在についての基礎考察。
+                            </p>
+                            <a href="exam_mock8.html"
+                                class="inline-flex items-center text-white text-sm font-bold group/btn">
+                                挑戦する
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
                 </div>
-            </article>
+            </div>
 
-            <!-- Card: Mock 4 -->
-            <article
-                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition group">
-                <div class="h-2 bg-brand-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-50 text-brand-600 text-xs font-bold px-2 py-1 rounded">予想問題 4</span>
-                        <span class="text-slate-400 text-xs">社会課題</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">移動する境界線と市民権
-                    </h3>
-                    <p class="text-slate-500 text-sm mb-6 line-clamp-2">移民・難民問題を通じた、国家と個人の関係性の再考。</p>
-                    <a href="exam_mock4.html"
-                        class="block w-full text-center bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 font-bold py-3 rounded-lg border border-slate-200 hover:border-brand-200 transition">問題に挑戦する</a>
+            <!-- Standard & Advanced -->
+            <div>
+                <div class="flex items-center space-x-4 mb-8">
+                    <h3 class="text-brand-500 font-display font-bold text-lg uppercase tracking-widest">02. Standard /
+                        Advanced</h3>
+                    <div class="h-px bg-brand-500/20 flex-grow"></div>
+                    <span class="text-slate-600 text-[10px] font-bold">合否を分ける重要テーマ</span>
                 </div>
-            </article>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Mock 1 -->
+                    <article class="glass-dark rounded-[2.5rem] overflow-hidden border-white/5 card-hover group">
+                        <div class="h-3 bg-brand-500"></div>
+                        <div class="p-8">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-brand-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    01</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Standard</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brand-500 transition">
+                                地政学的境界の再定義</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-8">
+                                伝統的な国境線と、サイバー空間等の「目に見えない境界」の変容を問う。
+                            </p>
+                            <a href="exam_mock1.html"
+                                class="inline-flex items-center text-white text-sm font-bold group/btn">
+                                挑戦する
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
 
-            <!-- Card: Mock 5 -->
-            <article
-                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition group">
-                <div class="h-2 bg-brand-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-50 text-brand-600 text-xs font-bold px-2 py-1 rounded">予想問題 5</span>
-                        <span class="text-slate-400 text-xs">国際政治</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">多極化する国際秩序
-                    </h3>
-                    <p class="text-slate-500 text-sm mb-6 line-clamp-2">米国一極集中から多極化へ移行する世界における、新たな秩序形成の可能性。</p>
-                    <a href="exam_mock5.html"
-                        class="block w-full text-center bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 font-bold py-3 rounded-lg border border-slate-200 hover:border-brand-200 transition">問題に挑戦する</a>
+                    <!-- Mock 2 -->
+                    <article class="glass-dark rounded-[2.5rem] overflow-hidden border-white/5 card-hover group">
+                        <div class="h-3 bg-brand-500"></div>
+                        <div class="p-8">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-brand-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    02</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Advanced</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brand-500 transition">
+                                経済安全保障のジレンマ</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-8">
+                                自由貿易の原則と、国家安全保障のための規制強化の対立を論じる。
+                            </p>
+                            <a href="exam_mock2.html"
+                                class="inline-flex items-center text-white text-sm font-bold group/btn">
+                                挑戦する
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Mock 3 -->
+                    <article class="glass-dark rounded-[2.5rem] overflow-hidden border-white/5 card-hover group">
+                        <div class="h-3 bg-brand-500"></div>
+                        <div class="p-8">
+                            <div class="flex justify-between mb-4">
+                                <span class="text-brand-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    03</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Theory</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brand-500 transition">
+                                『正義』の多義性と共生</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-8">
+                                異なる正義間の対立をどう調停するか。抽象度の高い思考力を鍛える。
+                            </p>
+                            <a href="exam_mock3.html"
+                                class="inline-flex items-center text-white text-sm font-bold group/btn">
+                                挑戦する
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
                 </div>
-            </article>
 
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Mock 4 -->
+                    <article
+                        class="glass-dark rounded-[2.5rem] p-8 overflow-hidden border-white/5 card-hover group flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="text-brand-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    04</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Social Issue</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-500 transition">
+                                移動する境界線と市民権</h3>
+                            <a href="exam_mock4.html"
+                                class="text-slate-400 text-xs font-bold hover:text-white transition">READ MORE →</a>
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-brand-500/20 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8 text-slate-600 group-hover:text-brand-500 transition" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                    </article>
+
+                    <!-- Mock 5 -->
+                    <article
+                        class="glass-dark rounded-[2.5rem] p-8 overflow-hidden border-white/5 card-hover group flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="text-brand-500 text-[10px] font-black tracking-widest uppercase">Theme
+                                    05</span>
+                                <span class="text-slate-600 text-[10px] font-bold uppercase">Politics</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-500 transition">
+                                多極化する国際秩序</h3>
+                            <a href="exam_mock5.html"
+                                class="text-slate-400 text-xs font-bold hover:text-white transition">READ MORE →</a>
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-brand-500/20 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8 text-slate-600 group-hover:text-brand-500 transition" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm">
-        <div class="max-w-4xl mx-auto px-4">
-            <p class="mb-4">&copy; 2026 ECCベストワン藍住・北島中央．All rights reserved.</p>
-            <p>※本サイトは学習用サンプルです。実際の入試情報は大学公式サイトをご確認ください。</p>
+    <footer class="bg-[#070b14] border-t border-white/5 py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mx-auto mb-8">
+                <span class="text-slate-400 font-display font-bold">SP</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-4 tracking-tighter">&copy; 2026 ECCベストワン藍住・北島中央．All rights reserved.</p>
+            <p class="text-slate-600 text-[10px] max-w-md mx-auto leading-relaxed">
+                ※本サイトは学習用サンプルです。実際の入試情報は必ず島根県立大学公式サイトにて最新の情報をご確認ください。
+            </p>
         </div>
     </footer>
 
